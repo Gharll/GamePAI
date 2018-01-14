@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Config>
+	<boardSize>15</boardSize>
+	<matchesToWin>5</matchesToWin>
+	<obstaclesQuantity>15</obstaclesQuantity></Config>
