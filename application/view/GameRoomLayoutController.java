@@ -6,17 +6,14 @@ import java.util.ArrayList;
 import application.MainApp;
 import application.model.Board;
 import application.model.Sprite;
-import gameEngine.Config;
 import gameEngine.Obstacle;
 import gameEngine.ObstacleList;
 import gameEngine.Position;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.ColumnConstraints;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.RowConstraints;
 import javafx.scene.shape.Circle;
 import javafx.scene.text.Text;
 
@@ -37,6 +34,8 @@ public class GameRoomLayoutController {
 	private Label roundNumberLabel;
 	@FXML
 	private Button disconnectButton;
+	@FXML
+	private ScrollPane boardScrollPane;
 	
 	private int boardSize;
 	private BoardController boardController;
@@ -65,7 +64,8 @@ public class GameRoomLayoutController {
 		this.boardSize = boardSize;
 		Board board = new Board(boardSize);
 		boardController = new BoardController(board, this);
-		mainPane.setCenter(boardController.getBoard().getGridBoardPane());
+		//mainPane.setCenter(boardController.getBoard().getGridBoardPane());
+		boardScrollPane.setContent(boardController.getBoard().getGridBoardPane());
 	}
 	
 	public void setRoomInfo(ArrayList<String> args){
